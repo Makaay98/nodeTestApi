@@ -17,6 +17,7 @@ app.get("/users", (req, res) => {
 
 app.post("/users", (req, res) => {
   console.log(req.body)
+  res.status(201)
 })
 
 app.listen(5000, () => {

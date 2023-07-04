@@ -5,8 +5,14 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send([{ id: uuidv4(), name: "Maki" }]);
+const users = [
+  { id: uuidv4(), name: "Maki" },
+  { id: uuidv4(), name: "Djole" },
+  { id: uuidv4(), name: "Cofi" }
+]
+
+app.get("/users", (req, res) => {
+  res.send(users);
 });
 
 app.listen(5000, () => {

@@ -5,7 +5,7 @@ const express = require("express");
 
 const app = express();
 
-const users = [
+var users = [
   { id: uuidv4(), name: "Maki" },
   { id: uuidv4(), name: "Djole" },
   { id: uuidv4(), name: "Cofi" }
@@ -14,6 +14,10 @@ const users = [
 app.get("/users", (req, res) => {
   res.send(users);
 });
+
+app.post("/users", (req, res) => {
+  console.log(req.body)
+})
 
 app.listen(5000, () => {
   console.log("Server started!!!");
